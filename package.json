@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --env=development",
+    "build": "rimraf ./dist && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+    "start": "node dist/server.js --env=production",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
   },
   "keywords": [],
   "author": "",
